@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Project 1 Grade Tracker</string>
+    <string name="welcome_student">Welcome Student!!!</string>
+    <string name="Log_In_Button">Log In</string>
+    <string name="username">Username:</string>
+    <string name="password">Password:</string>
 </resources>
