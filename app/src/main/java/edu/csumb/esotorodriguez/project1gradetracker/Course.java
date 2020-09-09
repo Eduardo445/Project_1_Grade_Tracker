@@ -63,7 +63,7 @@ public class Course {
         return endDate;
     }
 
-    // This may not be necessary
+    // These last two may not be needed, may delete later
     public int getUserID() {
         return UserID;
     }

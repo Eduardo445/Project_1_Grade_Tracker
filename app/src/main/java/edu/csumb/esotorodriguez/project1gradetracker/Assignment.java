@@ -67,7 +67,7 @@ public class Assignment {
         return dueDate;
     }
 
-    // These last two may not be needed
+    // These last two may not be needed, may delete later
     public int getCategoryID() {
         return CategoryID;
     }

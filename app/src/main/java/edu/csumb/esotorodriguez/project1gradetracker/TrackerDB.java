@@ -24,4 +24,6 @@ public abstract class TrackerDB extends RoomDatabase {
         }
         return instance;
     }
+
+    // May add something later
 }

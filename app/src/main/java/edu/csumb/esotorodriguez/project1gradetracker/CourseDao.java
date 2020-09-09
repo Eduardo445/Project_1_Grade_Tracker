@@ -16,4 +16,6 @@ public interface CourseDao {
 
     @Delete
     void delete(Course course);
+
+    // will add more later
 }

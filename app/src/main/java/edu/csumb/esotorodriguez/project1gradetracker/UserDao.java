@@ -16,4 +16,6 @@ public interface UserDao {
 
     @Delete
     void delete(User user);
+
+    // will add more later
 }

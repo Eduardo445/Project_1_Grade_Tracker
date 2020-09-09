@@ -16,4 +16,6 @@ public interface AssignmentDao {
 
     @Delete
     void delete(Assignment assignment);
+
+    // will add more later
 }

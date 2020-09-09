@@ -41,7 +41,7 @@ public class GradeCategory {
         return weight;
     }
 
-    // This may not be used
+    // These last two may not be needed, may delete later
     public int getCourseID() {
         return CourseID;
     }

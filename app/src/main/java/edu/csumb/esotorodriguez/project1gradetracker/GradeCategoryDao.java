@@ -16,4 +16,6 @@ public interface GradeCategoryDao {
 
     @Delete
     void delete(GradeCategory gradeCategory);
+
+    // will add more later
 }
