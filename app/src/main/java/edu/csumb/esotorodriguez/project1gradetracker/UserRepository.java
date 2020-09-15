@@ -18,19 +18,19 @@ public class UserRepository {
     }
 
     public void insert(User user) {
-        new UserRepository.InsertUserAsyncTask(userDao).execute(user);
+        new InsertUserAsyncTask(userDao).execute(user);
     }
 
-    public void update(Assignment assignment) {
-        new AssignmentRepository.UpdateUserAsyncTask(assignmentDao).execute(assignment);
+    public void update(User user) {
+        new UpdateUserAsyncTask(userDao).execute(user);
     }
 
-    public void delete(Assignment assignment) {
-        new AssignmentRepository.DeleteUserAsyncTask(assignmentDao).execute(assignment);
+    public void delete(User user) {
+        new DeleteUserAsyncTask(userDao).execute(user);
     }
 
-    public LiveData<List<Assignment>> getAllAssignments() {
-        return allAssignments;
+    public LiveData<List<User>> getAllUsers() {
+        return allUsers;
     }
 
     private static class InsertUserAsyncTask extends AsyncTask<User, Void, Void> {
@@ -47,30 +47,31 @@ public class UserRepository {
         }
     }
 
-    private static class UpdateUserAsyncTask extends AsyncTask<Assignment, Void, Void> {
-        private AssignmentDao assignmentDao;
+    private static class UpdateUserAsyncTask extends AsyncTask<User, Void, Void> {
+        private UserDao userDao;
 
-        private UpdateUserAsyncTask(AssignmentDao assignmentDao){
-            this.assignmentDao = assignmentDao;
+        private UpdateUserAsyncTask(UserDao userDao){
+            this.userDao = userDao;
         }
 
         @Override
-        protected Void doInBackground(Assignment... assignments) {
-            assignmentDao.update(assignments[0]);
+        protected Void doInBackground(User... users) {
+            userDao.update(users[0]);
             return null;
         }
+
     }
 
-    private static class DeleteUserAsyncTask extends AsyncTask<Assignment, Void, Void> {
-        private AssignmentDao assignmentDao;
+    private static class DeleteUserAsyncTask extends AsyncTask<User, Void, Void> {
+        private UserDao userDao;
 
-        private DeleteUserAsyncTask(AssignmentDao assignmentDao){
-            this.assignmentDao = assignmentDao;
+        private DeleteUserAsyncTask(UserDao userDao){
+            this.userDao = userDao;
         }
 
         @Override
-        protected Void doInBackground(Assignment... assignments) {
-            assignmentDao.delete(assignments[0]);
+        protected Void doInBackground(User... users) {
+            userDao.delete(users[0]);
             return null;
         }
     }
