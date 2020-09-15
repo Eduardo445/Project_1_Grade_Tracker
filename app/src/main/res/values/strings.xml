@@ -6,4 +6,9 @@
     <string name="password">Password:</string>
     <string name="usernameText">Username</string>
     <string name="passwordText">Password</string>
+    <string name="createAccount">Create Account</string>
+    <string name="firstName">First Name:</string>
+    <string name="lastName">Last Name:</string>
+    <string name="firstNameInput">First Name</string>
+    <string name="lastNameInput">Last Name</string>
 </resources>
