@@ -25,5 +25,8 @@ public interface UserDao {
     @Query("SELECT * FROM user_table ORDER BY userID DESC")
     LiveData<List<User>> getAllUsers();
 
+    @Query("SELECT * FROM user_table WHERE username = :user")
+    User getSpecificUser(String user);
+
     // will add more later
 }

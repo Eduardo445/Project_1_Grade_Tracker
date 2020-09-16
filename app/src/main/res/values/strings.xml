@@ -1,15 +1,21 @@
 <resources>
     <string name="app_name">Project 1 Grade Tracker</string>
     <string name="welcome_student">Welcome Student!!!</string>
-    <string name="Log_In_Button">Log In</string>
+    <string name="login_button">Log-In</string>
+    <string name="signin_button">Sign-In</string>
+    <string name="create_button">Create</string>
+
+    <string name="create_title">Create User</string>
     <string name="username">Username:</string>
+    <string name="username_text">Username</string>
     <string name="password">Password:</string>
-    <string name="usernameText">Username</string>
-    <string name="passwordText">Password</string>
+    <string name="password_text">Password</string>
+    <string name="first_name">First Name:</string>
+    <string name="first_name_hint">First Name</string>
+    <string name="last_name">Last Name:</string>
+    <string name="last_name_hint">Last Name</string>
 
-    <string name="userTitle">User Information</string>
-    <string name="firstName">First Name</string>
-    <string name="lastName">Last Name</string>
-    <string name="userID">User ID</string>
 
+
+    <string name="user_title">User Information</string>
 </resources>
