@@ -5,7 +5,6 @@ import androidx.room.PrimaryKey;
 
 @Entity(tableName = "user_table")
 public class User {
-    // delete comment later
     @PrimaryKey(autoGenerate = true)
     private int userID;
 

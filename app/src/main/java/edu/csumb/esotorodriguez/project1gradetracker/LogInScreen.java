@@ -13,7 +13,6 @@ import androidx.room.Room;
 
 public class LogInScreen  extends AppCompatActivity {
 
-    public static final int LOGIN_USER = 4;
     private UserDao userDB;
 
     private EditText username;
@@ -32,10 +31,8 @@ public class LogInScreen  extends AppCompatActivity {
         login = findViewById(R.id.btnSignIn);
 
         login.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
-
                 if (checkUser()) {
                     Toast.makeText(LogInScreen.this, "Logged in new User", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(LogInScreen.this, MainActivity.class);
@@ -60,6 +57,7 @@ public class LogInScreen  extends AppCompatActivity {
                 return true;
             }
         }
+
         Toast.makeText(LogInScreen.this, "Incorrect Username or Password", Toast.LENGTH_SHORT).show();
         return false;
     }
@@ -76,5 +74,4 @@ public class LogInScreen  extends AppCompatActivity {
         intent.putExtra("LOGIN_USER", value);
         return intent;
     }
-
 }

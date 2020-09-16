@@ -23,10 +23,8 @@ public interface UserDao {
     void delete(User user);
 
     @Query("SELECT * FROM user_table ORDER BY userID DESC")
-    LiveData<List<User>> getAllUsers();
+    List<User> getAllUsers();
 
     @Query("SELECT * FROM user_table WHERE username = :user")
     User getSpecificUser(String user);
-
-    // will add more later
 }
