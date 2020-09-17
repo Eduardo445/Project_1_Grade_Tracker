@@ -1,5 +1,6 @@
 package edu.csumb.esotorodriguez.project1gradetracker;
 
+import android.os.Bundle;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +16,22 @@ public class EditCourseScreen extends AppCompatActivity {
             "edu.csumb.esotorodriguez.loginandlanding.EXTRA_PRIORITY";
 
     private EditText editTextTitle;
-    private EditText editInstructorName;
-    private EditText edit
+    private EditText editTextInstructorName;
+    private EditText editTextDescription;
+    private EditText editTextStartDate;
+    private EditText editTextEndDate;
+
+    @Override
+    protected  void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.edit_course_screen);
+
+        editTextTitle = findViewById(R.id./*insert edit text name here*/);
+        editTextInstructorName = findViewById(R.id./*insert edit text name here*/);
+        editTextDescription = findViewById(R.id./*insert edit text name here*/);
+        editTextStartDate = findViewById(R.id./*insert edit text name here*/);
+        editTextEndDate = findViewById(R.id./*insert edit text name here*/);
+
+    }
+
 }
