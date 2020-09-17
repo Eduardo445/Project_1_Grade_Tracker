@@ -19,19 +19,21 @@ public class Course {
 
     private String description;
 
-    // check for adding dates https://www.youtube.com/watch?v=CNGLsYPZd_o
-    private String startDate;
+//    private String startDate;
+//
+//    private String endDate;
 
-    private String endDate;
+    private String meeting;
 
     private int UserID;
 
-    public Course(String instructor, String title, String description, String startDate, String endDate, int UserID) {
+    public Course(String instructor, String title, String description, String meeting, int UserID) {
         this.instructor = instructor;
         this.title = title;
         this.description = description;
-        this.startDate = startDate;
-        this.endDate = endDate;
+//        this.startDate = startDate;
+//        this.endDate = endDate;
+        this.meeting = meeting;
         this.UserID = UserID;
     }
 
@@ -55,12 +57,16 @@ public class Course {
         return description;
     }
 
-    public String getStartDate() {
-        return startDate;
-    }
-
-    public String getEndDate() {
-        return endDate;
+//    public String getStartDate() {
+//        return startDate;
+//    }
+//
+//    public String getEndDate() {
+//        return endDate;
+//    }
+    
+    public String getMeeting() {
+        return meeting;
     }
 
     // These last two may not be needed, may delete later
