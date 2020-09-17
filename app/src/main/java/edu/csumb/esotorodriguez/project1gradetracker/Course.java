@@ -64,6 +64,10 @@ public class Course {
 //    public String getEndDate() {
 //        return endDate;
 //    }
+    
+    public String getMeeting() {
+        return meeting;
+    }
 
     // These last two may not be needed, may delete later
     public int getUserID() {
