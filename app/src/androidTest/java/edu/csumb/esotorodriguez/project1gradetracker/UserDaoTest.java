@@ -1,7 +1,6 @@
 package edu.csumb.esotorodriguez.project1gradetracker;
 
 import android.content.Context;
-import android.content.Intent;
 
 import androidx.room.Room;
 import androidx.test.platform.app.InstrumentationRegistry;
