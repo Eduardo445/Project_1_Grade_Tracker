@@ -16,7 +16,10 @@
     <string name="last_name_hint">Last Name</string>
 
 
-
     <string name="user_title">User Information</string>
+    <string name="instructor_text">Instructor</string>
+    <string name="title_text">Title</string>
+    <string name="description_text">Description</string>
+    <string name="meeting_text">Meeting</string>
 
 </resources>
