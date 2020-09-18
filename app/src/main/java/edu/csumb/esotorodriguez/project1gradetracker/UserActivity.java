@@ -12,6 +12,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -38,7 +39,7 @@ public class UserActivity extends AppCompatActivity {
         buttonAddNote.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(UserActivity.this, editCourseScreen.class);
+                Intent intent = new Intent(UserActivity.this, editUserScreen.class);
                 startActivityForResult(intent, ADD_USER_REQUEST);
             }
         });
@@ -66,9 +67,25 @@ public class UserActivity extends AppCompatActivity {
 
 
 
-
-
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == ADD_USER_REQUEST && resultCode == RESULT_OK){
+            String username = data.getStringExtra(editUserScreen.EXTRA_USERNAME);
+            String password = data.getStringExtra(editUserScreen.EXTRA_PASSWORD);
+            String firstName = data.getStringExtra(editUserScreen.EXTRA_FIRST_NAME);
+            String lastName = data.getStringExtra(editUserScreen.EXTRA_LAST_NAME);
+
+            User user = new User(username, password, firstName, lastName);
+            userDB.insert(user);
+
+            Toast.makeText(this, "User Saved", Toast.LENGTH_SHORT).show();
+        }
+    }
+
 
     public static Intent getIntent(Context context, String value) {
         Intent intent = new Intent(context, UserActivity.class);
