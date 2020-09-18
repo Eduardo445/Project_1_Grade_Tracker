@@ -28,7 +28,7 @@
             android:layout_toStartOf="@id/text_view_courseID"
             android:ellipsize="end"
             android:maxLines="1"
-            android:text="@string/title_text"
+            android:text="@string/title"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
         <TextView
@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/text_view_title"
             android:layout_marginTop="15dp"
-            android:text="@string/instructor_text" />
+            android:text="@string/instructor" />
 
         <TextView
             android:id="@+id/text_view_description"
@@ -45,16 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/text_view_instructor"
             android:layout_marginTop="15dp"
-            android:text="@string/description_text" />
-
-        <TextView
-            android:id="@+id/text_view_meeting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/text_view_description"
-            android:layout_marginTop="15dp"
-            android:text="@string/meeting_text" />
-
+            android:text="@string/description" />
 
     </RelativeLayout>
 
