@@ -13,7 +13,6 @@ import android.widget.Toast;
 
 public class CreateUserScreen extends AppCompatActivity {
 
-    public static final int CREATED_USER = 3;
     private UserDao userDB;
 
     private EditText first;

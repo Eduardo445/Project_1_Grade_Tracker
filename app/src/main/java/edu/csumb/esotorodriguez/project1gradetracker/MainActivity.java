@@ -39,10 +39,4 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
-//    public static Intent getIntent(Context context, int value) {
-//        Intent intent = new Intent(context, MainActivity.class);
-//        intent.putExtra("HOME_SCREEN", value);
-//        return intent;
-//    }
 }
