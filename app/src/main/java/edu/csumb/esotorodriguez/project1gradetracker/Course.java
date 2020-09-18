@@ -23,22 +23,38 @@ public class Course {
 //
 //    private String endDate;
 
-    private String meeting;
+//    private String meeting;
 
     private int UserID;
 
-    public Course(String instructor, String title, String description, String meeting, int UserID) {
+    public Course(String instructor, String title, String description, int UserID) {
         this.instructor = instructor;
         this.title = title;
         this.description = description;
 //        this.startDate = startDate;
 //        this.endDate = endDate;
-        this.meeting = meeting;
+//        this.meeting = meeting;
         this.UserID = UserID;
     }
 
     public void setCourseID(int courseID) {
         this.courseID = courseID;
+    }
+
+    public void setInstructor(String instructor) {
+        this.instructor = instructor;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setUserID(int userID) {
+        UserID = userID;
     }
 
     public int getCourseID() {
@@ -64,10 +80,10 @@ public class Course {
 //    public String getEndDate() {
 //        return endDate;
 //    }
-    
-    public String getMeeting() {
-        return meeting;
-    }
+//
+//    public String getMeeting() {
+//        return meeting;
+//    }
 
     // These last two may not be needed, may delete later
     public int getUserID() {
