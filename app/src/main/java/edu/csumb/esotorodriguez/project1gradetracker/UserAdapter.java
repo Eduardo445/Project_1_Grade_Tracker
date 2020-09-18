@@ -44,7 +44,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserHolder> {
         notifyDataSetChanged();
     }
 
-    class UserHolder extends RecyclerView.ViewHolder{
+    class UserHolder extends RecyclerView.ViewHolder {
 
         private TextView textViewUsername;
         private TextView textViewPassword;

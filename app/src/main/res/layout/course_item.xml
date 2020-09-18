@@ -11,7 +11,6 @@
         android:layout_height="match_parent"
         android:padding="8dp">
 
-
         <TextView
             android:id="@+id/text_view_courseID"
             android:layout_width="wrap_content"
@@ -46,7 +45,6 @@
             android:layout_below="@id/text_view_instructor"
             android:layout_marginTop="15dp"
             android:text="@string/description" />
-
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>
