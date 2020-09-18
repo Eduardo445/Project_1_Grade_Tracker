@@ -35,7 +35,8 @@ public class LogInScreen  extends AppCompatActivity {
             public void onClick(View v) {
                 if (checkUser()) {
                     Toast.makeText(LogInScreen.this, "Logged in new User", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(LogInScreen.this, MainActivity.class);
+                    Intent intent = UserActivity.getIntent(getApplicationContext(),
+                            userDB.getSpecificUser(username.getText().toString()).getUserID());
                     startActivity(intent);
                 }
             }
