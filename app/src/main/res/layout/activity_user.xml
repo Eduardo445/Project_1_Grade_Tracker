@@ -10,7 +10,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_course_view"
         android:layout_width="match_parent"
-        android:layout_height="253dp"
+        android:layout_height="569dp"
         android:layout_gravity="bottom"
         app:layout_anchor="@+id/recycler_user_view"
         app:layout_anchorGravity="bottom|center"

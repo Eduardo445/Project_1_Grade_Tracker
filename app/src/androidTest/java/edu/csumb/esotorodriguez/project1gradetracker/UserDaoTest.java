@@ -20,6 +20,16 @@ import static org.junit.Assert.*;
 @RunWith(AndroidJUnit4.class)
 public class UserDaoTest {
 
+    /**
+     * This is the Test Unit for the User table.
+     * Testing consists of:
+     * - Adding users to the DB
+     * - Check users were added to DB
+     * - Check for users not in the DB
+     * - Update one of the users currently in the DB
+     * - Check updated user is up to date
+     * - Delete user from the DB
+     */
     @Test
     public void userDaoTest() {
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
@@ -31,53 +41,45 @@ public class UserDaoTest {
 
         User user1 = new User("Other", "Name", "Testing", "Pass");
         User user2 = new User("Else", "Past", "Order", "Name");
+        User user3 = new User("Else", "Past", "Checking", "Name");
 
         userTestDB.insert(user1);
         userTestDB.insert(user2);
-        assertNotNull(userTestDB.getAllUsers());
+        userTestDB.insert(user3);
 
-        assertNotNull(userTestDB.getSpecificUser("Testing").getUserID());
-        if (userTestDB.getSpecificUser("Testing").getUserID() == user1.getUserID()) {
-            assertEquals(user1.getUserID(), userTestDB.getSpecificUser("Testing").getUserID());
-        }
+        user1.setUserID(userTestDB.getSpecificUser(user1.getUsername()).getUserID());
+        user2.setUserID(userTestDB.getSpecificUser(user2.getUsername()).getUserID());
+        user3.setUserID(userTestDB.getSpecificUser(user3.getUsername()).getUserID());
+
+        assertNotNull(userTestDB.getAllUsers());
         assertNotNull(userTestDB.getSpecificUser("Testing"));
-//        assertEquals(user1.getUserID(), userTestDB.getSpecificUser("Testing").getUserID());
+        assertNotNull(userTestDB.getSpecificUser("Order"));
+        assertNotNull(userTestDB.getSpecificUser("Checking"));
+        assertNull(userTestDB.getSpecificUser("Fail"));
+        assertNull(userTestDB.getSpecificUser("Trickster"));
+
         assertEquals(user1.getFirstName(), userTestDB.getSpecificUser("Testing").getFirstName());
         assertEquals(user1.getLastName(), userTestDB.getSpecificUser("Testing").getLastName());
         assertEquals(user1.getUsername(), userTestDB.getSpecificUser("Testing").getUsername());
         assertEquals(user1.getPassword(), userTestDB.getSpecificUser("Testing").getPassword());
-
-        assertNull(userTestDB.getSpecificUser("Fail"));
-        assertNotNull(userTestDB.getSpecificUser("Order"));
-        assertEquals(user2.getFirstName(), userTestDB.getSpecificUser("Order").getFirstName());
 
         user2.setFirstName("Night");
         user2.setLastName("Time");
         user2.setUsername("Eagle");
         user2.setPassword("Eye");
 
-        user2.setUserID(user2.getUserID());
-
-        System.out.println("Start of the List");
-
-        System.out.println(userTestDB.getAllUsers().toString());
-        System.out.println(userTestDB.getAllUsers().toString());
-
         userTestDB.update(user2);
 
-        System.out.println(userTestDB.getAllUsers().toString());
-        System.out.println(userTestDB.getAllUsers().toString());
-
-        System.out.println("End of the List");
-
+        assertNull(userTestDB.getSpecificUser("Order"));
         assertNotNull(userTestDB.getSpecificUser("Eagle"));
 
         assertEquals(user2.getFirstName(), userTestDB.getSpecificUser("Eagle").getFirstName());
+        assertEquals(user2.getLastName(), userTestDB.getSpecificUser("Eagle").getLastName());
         assertEquals(user2.getUsername(), userTestDB.getSpecificUser("Eagle").getUsername());
-
-        assertNotNull(userTestDB.getAllUsers());
+        assertEquals(user2.getPassword(), userTestDB.getSpecificUser("Eagle").getPassword());
 
         userTestDB.delete(user1);
         userTestDB.delete(user2);
+        userTestDB.delete(user3);
     }
 }

@@ -1,6 +1,5 @@
 package edu.csumb.esotorodriguez.project1gradetracker;
 
-
 import androidx.room.Database;
 import androidx.room.RoomDatabase;
 
