@@ -10,7 +10,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_course_view"
         android:layout_width="match_parent"
-        android:layout_height="327dp"
+        android:layout_height="253dp"
         android:layout_gravity="bottom"
         app:layout_anchor="@+id/recycler_user_view"
         app:layout_anchorGravity="bottom|center"
@@ -19,10 +19,17 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_user_view"
         android:layout_width="match_parent"
-        android:layout_height="320dp"
+        android:layout_height="165dp"
         android:layout_alignParentBottom="true"
         tools:listitem="@layout/user_item" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/button_add_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_add"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="32dp"/>
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
