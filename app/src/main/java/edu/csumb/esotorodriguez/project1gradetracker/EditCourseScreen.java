@@ -12,17 +12,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class EditCourseScreen extends AppCompatActivity {
     public static final String EXTRA_ID =
-            "edu.csumb.esotorodriguez.loginandlanding.EXTRA_ID";
+            "edu.csumb.esotorodriguez.Project_1_Grade_Tracker.EXTRA_ID";
     public static final String EXTRA_TITLE =
-            "edu.csumb.esotorodriguez.loginandlanding.EXTRA_TITLE";
+            "edu.csumb.esotorodriguez.Project_1_Grade_Tracker.EXTRA_TITLE";
     public static final String EXTRA_INSTRUCTOR =
-            "edu.csumb.esotorodriguez.loginandlaning.EXTRA_INSTRUCTOR";
+            "edu.csumb.esotorodriguez.Project_1_Grade_Tracker.EXTRA_INSTRUCTOR";
     public static final String EXTRA_DESCRIPTION =
-            "edu.csumb.esotorodriguez.loginandlanding.EXTRA_DESCRIPTION";
-    public static final String EXTRA_STARTDATE =
-            "edu.csumb.esotorodriguez.loginandlanding.EXTRA_STARTDATE";
-    public static final String EXTRA_ENDDATE =
-            "edu.csumb.esotorodriguez.loginandlaning.EXTRA_ENDDATE";
+            "edu.csumb.esotorodriguez.Project_1_Grade_Tracker.EXTRA_DESCRIPTION";
 
     private EditText editTextTitle;
     private EditText editTextInstructorName;
@@ -35,25 +31,12 @@ public class EditCourseScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.edit_course_screen);
 
-        editTextTitle = findViewById(R.id./*insert edit text name here*/);
-        editTextInstructorName = findViewById(R.id./*insert edit text name here*/);
-        editTextDescription = findViewById(R.id./*insert edit text name here*/);
-        editTextStartDate = findViewById(R.id./*insert edit text name here*/);
-        editTextEndDate = findViewById(R.id./*insert edit text name here*/);
+        editTextTitle = findViewById(R.id.editCourseTitle);
+        editTextInstructorName = findViewById(R.id.editCourseInstructor);
+        editTextDescription = findViewById(R.id.editCourseDescription);
 
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close);
         Intent intent = getIntent();
-        if(intent.hasExtra(EXTRA_ID)){
-            setTitle("Edit Note");
-            editTextTitle.setText(intent.getStringExtra(Intent.EXTRA_TITLE));
-            editTextInstructorName.setText(intent.getStringExtra(Intent.EXTRA_INSTRUCTOR));
-            editTextDescription.setText(intent.getStringExtra(Intent.EXTRA_DESCRIPTION));
-            editTextStartDate.setText(intent.getStringExtra(Intent.EXTRA_STARTDATE));
-            editTextEndDate.setText(intent.getStringExtra(Intent.EXTRA_ENDDATE));
-
-        } else {
-            setTitle("Add Note");
-        }
     }
 
     private void saveCourse(){
@@ -72,8 +55,6 @@ public class EditCourseScreen extends AppCompatActivity {
         data.putExtra(EXTRA_TITLE, title);
         data.putExtra(EXTRA_INSTRUCTOR, instructor);
         data.putExtra(EXTRA_DESCRIPTION, description);
-        data.putExtra(EXTRA_STARTDATE, startDate);
-        data.putExtra(EXTRA_ENDDATE, endDate);
 
         int id = getIntent().getIntExtra(EXTRA_ID, -1);
         if(id != -1){
@@ -94,7 +75,7 @@ public class EditCourseScreen extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()){
-            case.R.id.save_note:
+            case R.id.save_note:
                 saveCourse();
                 return true;
             default:
