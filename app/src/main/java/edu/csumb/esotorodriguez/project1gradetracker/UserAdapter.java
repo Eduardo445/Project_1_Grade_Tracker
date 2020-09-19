@@ -13,6 +13,7 @@ import java.util.List;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserHolder> {
 
+    private OnItemClickListener listener;
     private List<User> users = new ArrayList<>();
 
     @NonNull
@@ -44,6 +45,10 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserHolder> {
         notifyDataSetChanged();
     }
 
+    public User getUserAt(int position){
+        return users.get(position);
+    }
+
     class UserHolder extends RecyclerView.ViewHolder {
 
         private TextView textViewUsername;
@@ -53,7 +58,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserHolder> {
         private TextView textViewUserID;
 
 
-        public UserHolder(@NonNull View itemView) {
+        public UserHolder(View itemView) {
             super(itemView);
 
             textViewUsername = itemView.findViewById(R.id.text_view_username);
@@ -62,6 +67,23 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserHolder> {
             textViewLastName = itemView.findViewById(R.id.text_view_lname);
             textViewUserID = itemView.findViewById(R.id.text_view_userID);
 
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int position = getAdapterPosition();
+                    if(listener != null && position != RecyclerView.NO_POSITION) {
+                        listener.onItemClick(users.get(position));
+                    }
+                }
+            });
         }
+    }
+
+    public interface OnItemClickListener{
+        void onItemClick(User user);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener){
+        this.listener = listener;
     }
 }

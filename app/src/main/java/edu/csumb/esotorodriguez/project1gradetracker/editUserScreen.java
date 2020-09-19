@@ -46,6 +46,17 @@ public class editUserScreen extends AppCompatActivity {
 
         Intent intent = getIntent();
 
+        if(intent.hasExtra(EXTRA_ID)){
+            setTitle("Edit User");
+            username.setText(intent.getStringExtra(EXTRA_USERNAME));
+            password.setText(intent.getStringExtra(EXTRA_PASSWORD));
+            firstName.setText(intent.getStringExtra(EXTRA_FIRST_NAME));
+            lastName.setText(intent.getStringExtra(EXTRA_LAST_NAME));
+
+        }else {
+            setTitle("Add Note");
+        }
+
         userDB = Room.databaseBuilder(this, TrackerDB.class, TrackerDB.TRACKER_DB).allowMainThreadQueries().build().userDao();
 
     }
