@@ -23,5 +23,4 @@ public interface AssignmentDao {
 
     @Query("SELECT * FROM assignment_table ORDER BY earnedScore DESC")
     LiveData<List<Assignment>> getAllAssignments();
-    // will add more later
 }

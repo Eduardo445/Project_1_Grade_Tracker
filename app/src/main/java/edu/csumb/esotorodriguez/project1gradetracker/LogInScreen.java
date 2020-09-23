@@ -43,7 +43,15 @@ public class LogInScreen  extends AppCompatActivity {
         });
     }
 
-    private boolean checkUser(){
+    /**
+     * Purpose is to check if the user is in the DB.
+     * 1: It checks that the user inputs all information.
+     *    - Returns false and lets user know to input all information
+     * 2: Checks the DB for a matching user.
+     *    - Returns false if their is no user in DB
+     * @return true if all passes.
+     */
+    private boolean checkUser() {
         String user = username.getText().toString();
         String pass = password.getText().toString();
 
@@ -63,6 +71,12 @@ public class LogInScreen  extends AppCompatActivity {
         return false;
     }
 
+    /**
+     * Helper method to check if all fields where filled.
+     * @param user Username that the user inputted
+     * @param pass Password that the user inputted
+     * @return     false if a field value is missing, otherwise true.
+     */
     private boolean allInputs(String user, String pass) {
         if (user.trim().isEmpty() || pass.trim().isEmpty()) {
             return false;
@@ -70,6 +84,12 @@ public class LogInScreen  extends AppCompatActivity {
         return true;
     }
 
+    /**
+     * Allows to travel from the Main Screen to the Login Screen
+     * @param context for main screen's file
+     * @param value   for checking if intent is successful
+     * @return        the intent value.
+     */
     public static Intent getIntent(Context context, int value) {
         Intent intent = new Intent(context, LogInScreen.class);
         intent.putExtra("LOGIN_USER", value);

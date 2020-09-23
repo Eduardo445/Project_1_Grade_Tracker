@@ -46,6 +46,17 @@ public class CreateUserScreen extends AppCompatActivity {
         });
     }
 
+    /**
+     * Saves a new user into the DB as it meets.
+     * the following requirements:
+     * 1: Checks that no field is empty.
+     *    - Returns false and lets the user know that fields are empty
+     * 2: Checks that there is no duplicate username in the DB.
+     *    - Returns false and lets the user know that the username
+     *      already used
+     * @return true and lets the user know that they created
+     *         an account.
+     */
     private boolean saveUser() {
         String firstName = first.getText().toString();
         String lastName = last.getText().toString();
@@ -68,17 +79,29 @@ public class CreateUserScreen extends AppCompatActivity {
         return true;
     }
 
-    public static Intent getIntent(Context context, int value) {
-        Intent intent = new Intent(context, CreateUserScreen.class);
-        intent.putExtra("CREATE_USER", value);
-        return intent;
-    }
-
+    /**
+     * Helper method to check that their isn't the same
+     * username in the DB.
+     * @param username use for checking no duplicates
+     * @return         false if found duplicate, otherwise true
+     */
     private boolean duplicateUsername(String username) {
         User user1 = userDB.getSpecificUser(username);
         if (user1 != null) {
             return true;
         }
         return false;
+    }
+
+    /**
+     * Allows to travel from the Main Screen to the CreateUser Screen
+     * @param context for create user screen's file
+     * @param value   for checking if intent is successful
+     * @return        the intent value.
+     */
+    public static Intent getIntent(Context context, int value) {
+        Intent intent = new Intent(context, CreateUserScreen.class);
+        intent.putExtra("CREATE_USER", value);
+        return intent;
     }
 }

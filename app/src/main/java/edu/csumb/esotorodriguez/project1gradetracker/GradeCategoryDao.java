@@ -23,6 +23,4 @@ public interface GradeCategoryDao {
 
     @Query("SELECT * FROM grade_category_table ORDER BY categoryID DESC")
     LiveData<List<GradeCategory>> getAllGradeCategories();
-
-    // will add more later
 }
